@@ -65,7 +65,7 @@ homework_tracking_app
 
 ##User Stories:
 
-** User-Teacher/Admin:
+** User-Teacher/Admin:**
 * As a teacher, I want to be register for the homework app
 * As a teacher, I want to create a class in a location
 * As a teacher, I want to create homework assignments.
@@ -75,7 +75,7 @@ homework_tracking_app
 * As a teacher, I want to be able to communicate with the student on a homework submission.
 * As a teacher, I want to be able to mark a students homework submission as completed or needs improvement.
 
-** User-Student:
+** User-Student:**
 * As a student, I want to register for the homework app
 * As a student, I want to register for an upcoming class in a location.
 * As a student, I want to look at my teachers homework assignment
