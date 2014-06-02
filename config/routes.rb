@@ -1,5 +1,16 @@
 Rails.application.routes.draw do
   devise_for :users
+  resources :cohorts#, shallow: true do
+    #resources :enrolling
+  #end
+  resources :enrollments
+  resources :subjects
+  resources :locations
+  
+  resources :comments
+  resources :homework_assignments
+  resources :homework_submissions
+  
   get 'welcome/index'
 
   # The priority is based upon order of creation: first created -> highest priority.

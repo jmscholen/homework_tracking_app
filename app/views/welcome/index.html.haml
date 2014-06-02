@@ -1,0 +1,31 @@
+.container
+	.container
+		%h3 Available courses:
+		%table
+			%thead
+				%th Subject
+				%th Location
+				%th Spaces Avaiable
+				%th Spaces Taken
+				%th Start Date
+				%th End Date
+			%tbody	
+				-@cohorts.each do |cohort|
+					-count = 0
+					-subject = Subject.find(cohort.subject_id)
+					-location = Location.find(cohort.location_id)
+					-@enrollments.each do |enrolled|
+						-if enrolled.cohort_id == cohort.id
+							-count += 1
+					%tr
+						%td= subject.title
+						%td= location.name
+						%td= cohort.enrollment_size
+						%td= count
+						%td= formatted_date(cohort.start_date)
+						%td= formatted_date(cohort.end_date)
+						%td= link_to "Enroll", new_enrollment_path(:cohort_id => cohort.id)
+		%h3 Add A Course:
+		=render "/cohorts/form"
+
+

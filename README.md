@@ -1,43 +1,44 @@
-homework_tracking_app
+Homework Tracking App
 =====================
 
-
 ##Models and Associations:
+
 **Location**
 * name:string
 * has_many :subjects
-* has_many :courses
+* has_many :cohorts
 
 **Subject**
 * course_number: integer ## meant to be like Rails 101
 * title: string
 * has_many :locations
-* has_many :courses
+* has_many :cohorts
 
-**Course**
-* title: string
-* cohort:references
-* subject: references
-* location: references
-* start_date: date
-* end_date: date
-* enrollment_size: integer
-* belongs_to :location
-* belongs_to :subject
-* has_one :cohort
-* has_many :homework_assignments
+
+**Enrollment**
+* cohort_id: integer
+* user_id: integer
+* status: string
+* has_and_belongs_to_many :users
+* has_and_belongs_to_many :cohorts
+
 
 **Cohort**
 * Title: string
-* user: references
-* belongs_to :course
-* has_many :users
+* Subject_id: integer
+* Location_id: integer
+* start_date: date
+* end_date: date
+* enrollment_size: integer
+* has_and_belongs_to_many :enrollments
+* belongs_to :location
+* belongs_to :subject
+
 
 **User**
 * name: string
-* cohort: references
-* comment: references
-* has_and_belongs_to_many :cohorts
+* comment_id: integer
+* has_and_belongs_to_many :enrollments
 * has_many :comments
 * has_many :homework_submissions
 
@@ -46,21 +47,22 @@ homework_tracking_app
 * Title: string
 * Description: string
 * Due Date: date
-* course: references
-* belongs_to :course
+* cohort_id: integer
+* belongs_to :cohort
 * has_many :homework_submissions
 
 **Homework_Submissions**
 * Title: string
 * Links: string
-* homework_assignment: references
+* Explanation: text
+* homework_assignment_id:integer
 * belongs_to :homeworks_assignments
 * belongs_to :user
 
 
 **Comments**
 * Text: text_field
-* user: references
+* user_id: integer
 * belongs_to :user
 
 ##User Stories:

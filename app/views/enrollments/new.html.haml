@@ -1,0 +1,10 @@
+=form_for @new_enrollment do |ne|
+	%br
+	= ne.label :title
+	= ne.number_field :cohort_id, value: @new_enrollment.cohort_id
+	%br
+	= ne.label "Student:"
+	= ne.number_field :user_id, value: current_user.id
+	%br
+	= ne.hidden_field :status, value: "Active"
+	= ne.submit "Register for Cohort"
