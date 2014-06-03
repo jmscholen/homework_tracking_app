@@ -7,6 +7,7 @@ class LocationsController < ApplicationController
 
 	def new
 		@new_location = Location.new
+		authorize @new_location
 		@new_location.subjects.build
 	end
 
