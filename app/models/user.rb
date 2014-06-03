@@ -6,5 +6,10 @@ class User < ActiveRecord::Base
   # , :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :trackable, :validatable
+  enum role: {user: 0, admin: 1}
+  after_initialize :set_default_role, :if => :new_record?
 
+  def set_default_role
+    self.role ||= :user
+  end
 end
