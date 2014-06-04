@@ -14,7 +14,7 @@ class LocationsController < ApplicationController
 	def create
 		@new_location = Location.new(location_params)
 		if @new_location.save
-			redirect_to root_path
+			redirect_to root_path, notice: "#{@new_location.title} added successfully."
 		else
 			redirect_to :new, notice: "There was a problem. Your new location was not created."
 		end

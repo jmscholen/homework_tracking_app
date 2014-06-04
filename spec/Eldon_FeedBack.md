@@ -1,0 +1,3 @@
+- Definitely need a courses table.
+- Subjects table probably should have a course_id instead of a course_number
+- I believe you are using Devise. I tried to add myself as a user (rails s localhost:3000) and was told that I needed to confirm my email before I could log in. Which is fine, except I never got an email that would allow me to confirm.
