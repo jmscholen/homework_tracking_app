@@ -4,10 +4,11 @@ class CohortsController < ApplicationController
 	end
 
 	def show
+		@cohort = Cohort.find(params[:id])
+		@cohort_presenter = CohortPresenter.new(@cohort)
+		puts @cohort.start_date
 	end
 
-	def new
-	end
 
 	def create
 		@new_cohort = Cohort.new(cohort_params)

@@ -3,8 +3,8 @@ class User < ActiveRecord::Base
 	has_many :comments
 	has_many :homework_submissions
   # Include default devise modules. Others available are:
-  # , :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable, :confirmable,
+  # , :lockable, :timeoutable and :omniauthable :confirmable
+  devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   enum role: {user: 0, admin: 1}
   after_initialize :set_default_role, :if => :new_record?

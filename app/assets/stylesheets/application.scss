@@ -13,3 +13,24 @@
  *= require_tree .
  *= require_self
  */
+
+@import "bootstrap";
+
+
+#alertbox {
+	display: inline-block;
+}
+
+#bodyid {
+	background-image: url("school_homework.jpg");
+	
+	-webkit-background-size: 100% auto;
+
+	-moz-background-size: 100% auto;
+
+	-ms-background-size: 100% auto;
+
+	-o-background-size: 100% auto;
+
+	background-size: 100% auto;
+}

@@ -42,7 +42,7 @@ group :test do
 	gem 'factory_girl_rails'
 end
 
-
+gem 'draper', '~>1.3'
 # Use unicorn as the app server
 # gem 'unicorn'
 

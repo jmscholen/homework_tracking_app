@@ -2,18 +2,18 @@
 	%br
 	= nc.label :subject_id
 	= nc.select :subject_id, Subject.all.collect {|s| [s.title, s.id]}, include_blank: true
-	%br
 	= nc.label :location_id
 	= nc.select :location_id, Location.all.collect {|l| [l.name, l.id]}, include_blank: true
 	%br
+	%br
+
 	= nc.label :start_date
 	= nc.date_field :start_date
-	%br
 	= nc.label :end_date
 	= nc.date_field :end_date
 	%br
+	%br
 	= nc.label :enrollment_size
 	= nc.number_field :enrollment_size
-	%br
 	= nc.hidden_field :title, value: "Cohort-Group"
-	= nc.submit "Create"
+	= nc.submit "Create", :class => "btn btn-success"
