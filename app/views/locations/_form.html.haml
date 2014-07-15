@@ -1,20 +1,28 @@
-.container
-%h3 Add a New Location:
-=form_for @new_location do |nl|
-	%br
-	= nl.label :name
-	= nl.text_field :name
-	%br
-	Available Subjects:
-	= nl.select :subject_id, Subject.all.collect {|s| [s.title, s.id]}, include_blank: true
-	%br
-	Create a New Subject and Add to this New Location?
-	%br
-	= nl.fields_for :subjects do |ns|
-		= ns.label :title
-		= ns.text_field :title
-		%br
-		= ns.label "Course number Must follow the xxx convention, ie Rails 101"
-		= ns.number_field :course_number
-	%br
-	= nl.submit "Submit"	
+.panel.panel-default#panel-limit-width
+	.panel-heading
+		.panel-title Add a New Location:
+
+	.panel-body  
+		=form_for @new_location do |nl|
+			%br
+			= nl.label :name
+			= nl.text_field :name
+			%br
+			%br
+			Available Subjects:
+			%br
+			= nl.select :subject_id, Subject.all.collect {|s| [s.title, s.id]}, include_blank: true
+			%br
+			%br
+			Create a New Subject and Add to this New Location?
+			%br
+			= nl.fields_for :subjects do |ns|
+				= ns.label :title
+				= ns.text_field :title
+				%br
+				= ns.label "Course number Must follow the xxx convention, ie Rails 101"
+				%br
+				= ns.number_field :course_number
+			%br
+			%br
+			= nl.submit "Submit", :class => 'btn btn-primary'
