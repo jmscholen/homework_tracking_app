@@ -1,28 +1,20 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is an assignment from the Iron Yard. The application is to allow a teacher to login, create assignments and review submitted homework from a student.
 
-Things you may want to cover:
+Relevant technologies:
 
-* Ruby version
+* Rails 4
 
-* System dependencies
+* Ruby 2
 
-* Configuration
+* Heroku deployment
 
-* Database creation
+* Issues are created to address needed corrections and changes.
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* The assignment is partially complete. 
 
 
-Please feel free to use a different markup language if you do not plan to run
+
+
 <tt>rake doc:app</tt>.
