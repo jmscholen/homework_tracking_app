@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
 
   def set_default_role
     self.role ||= :user
+    rescue ActiveRecord::MissingAttributeError
   end
 
   def administrator?
